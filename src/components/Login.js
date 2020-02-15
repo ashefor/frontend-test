@@ -6,7 +6,7 @@ const url = 'https://37b0a67e-4593-4027-b07a-93caf29e1814.mock.pstmn.io';
 class LoginForm extends Component {
   handleSubmit = e => {
     const { history,location, logIn } = this.props;
-    const { from } = location.state || { from: { pathname: "/" } };
+    const { from } = location.state || { from: { pathname: "/compare" } };
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {

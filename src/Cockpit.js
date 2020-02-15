@@ -16,14 +16,11 @@ const { Header, Sider, Content } = Layout;
 const AuthButton = ({ isAuthenticated, signOut, history }) => {
 
     return isAuthenticated ? (
-        <p>
-            Welcome!{" "}
-            <Button type="primary" ghost
-            onClick={signOut}
-            >
-                Sign out
-        </Button>
-        </p>
+        <Button type="primary" ghost
+        onClick={signOut}
+        >
+            Sign out
+    </Button>
     ) : (
         <Button type="primary" ghost
         onClick={()=> history.push('/login')}
@@ -71,6 +68,9 @@ class Cockpit extends Component {
             collapsed: !this.state.collapsed,
         });
     };
+    componentDidMount(){
+        this.toggle()
+    }
     render() {
         const { location, history } = this.props;
         const {collapsed, isAuthenticated} = this.state
